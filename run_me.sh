@@ -52,6 +52,9 @@ function install_section_core {
     cp -r "$SCRIPT_DIR/.config/fish" ~/.config
     cp -r "$SCRIPT_DIR/.config/kitty" ~/.config
 
+    # Locale - install en_GB locale, just like en_US but weekdays start with Monday
+    sudo localedef -i en_GB -f UTF-8 en_GB.UTF-8
+
     show_dialog_section_finished "Core"
 }
 

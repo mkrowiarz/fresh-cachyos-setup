@@ -28,7 +28,7 @@
 	"format": "{:%H:%M}",
 	"format-alt": "{:%d/%m/%Y}",
 	"tooltip-format": "<tt><big>{calendar}</big></tt>",
-    "locale": "en_US.UTF-8",
+    "locale": "en_GB.UTF-8",
 	"calendar": {
 		"mode"          : "month",
 		"mode-mon-col"  : 3,
