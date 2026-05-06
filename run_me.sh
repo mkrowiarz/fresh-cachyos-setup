@@ -165,13 +165,18 @@ function install_section_dev {
     # AWS CLI
     pacman_install aws-cli
 
-    # Git identity
-    local current_email=$(git config --global user.email 2>/dev/null)
-    local current_name=$(git config --global user.name 2>/dev/null)
-    local git_email=$(dialog --stdout --inputbox "Git email:" 8 50 "$current_email")
-    local git_name=$(dialog --stdout --inputbox "Git name:" 8 50 "$current_name")
+    # Git settings
+    local current_git_email=$(git config --global user.email 2>/dev/null)
+    local current_git_name=$(git config --global user.name 2>/dev/null)
+    local current_git_editor=$(git config --global core.editor 2>/dev/null)
+
+    local git_email=$(dialog --stdout --inputbox "Git email:" 8 50 "$current_git_email")
+    local git_name=$(dialog --stdout --inputbox "Git name:" 8 50 "$current_git_name")
+    local git_editor=$(dialog --stdout --inputbox "Git editor:" 8 50 "$current_git_editor")
+
     [ -n "$git_email" ] && git config --global user.email "$git_email"
     [ -n "$git_name" ] && git config --global user.name "$git_name"
+    [ -n "$git_editor" ] && git config --global core.editor "$git_editor"
 
     show_dialog_section_finished "Development"
 }
