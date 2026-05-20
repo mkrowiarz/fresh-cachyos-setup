@@ -71,6 +71,10 @@ function install_section_hyprland {
     cp -r "$SCRIPT_DIR/.config/gtk-3.0" ~/.config
     cp -r "$SCRIPT_DIR/.config/gtk-4.0" ~/.config
 
+    # Some apps ignore GTK settings.ini and need to have gsettings set manually
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
     # An XDG Desktop Portal is a program that lets other applications communicate 
     # with the compositor through D-Bus. A portal implements certain functionalities, 
     # such as opening file pickers or screen sharing.
