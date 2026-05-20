@@ -133,6 +133,7 @@ function install_section_hyprland {
     # Power Menu (sleep, restart, logout, shutdown)
     # https://github.com/ArtsyMacaw/wlogout
     aur_install wlogout
+    cp -r "$SCRIPT_DIR/.config/wlogout" ~/.config
 
     show_dialog_section_finished "Desktop Environment"
 }
