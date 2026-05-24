@@ -8,7 +8,7 @@ source "$SCRIPT_DIR/helpers.sh"
 # Definitions
 # =============================================================================
 
-SECTIONS=("core" "hyprland" "dev" "gpu" "gaming" "comms" "sddm")
+SECTIONS=("core" "hyprland" "dev" "ai" "gpu" "gaming" "comms" "sddm")
 
 # =============================================================================
 # Prerequisites
@@ -183,6 +183,10 @@ function install_section_dev {
     grep -qF 'mise activate fish' ~/.config/fish/config.fish 2>/dev/null \
         || echo 'mise activate fish | source' >> ~/.config/fish/config.fish
 
+    # Install latest Node (provides npm) via mise, as the global default.
+    # The AI section relies on this for `npm i -g`.
+    mise use -g node@latest
+
     # JetBrains Toolbox - manages JetBrains IDEs (PhpStorm, etc.)
     aur_install jetbrains-toolbox
 
@@ -210,6 +214,34 @@ function install_section_dev {
 
     show_dialog_section_finished "Development"
 }
+
+# =============================================================================
+# AI: coding assistants (Claude Code, OpenAI Codex)
+# =============================================================================
+
+function install_section_ai {
+    show_dialog_section_begin "AI" "Claude Code, OpenAI Codex"
+
+    # Claude Code - installs to ~/.local/bin via the official script
+    curl -fsSL https://claude.ai/install.sh | bash
+
+    # OpenAI Codex CLI - global npm package.
+    # npm comes from the mise-managed Node installed in the dev section; put the
+    # mise shims on PATH so it's reachable in this non-interactive script.
+    if command -v mise >/dev/null 2>&1; then
+        export PATH="$HOME/.local/share/mise/shims:$PATH"
+    fi
+
+    # Verify npm exists before attempting the install.
+    if command -v npm >/dev/null 2>&1; then
+        npm i -g @openai/codex
+    else
+        echo "npm not found - run the 'dev' section first (installs mise + Node). Skipping Codex."
+    fi
+
+    show_dialog_section_finished "AI"
+}
+
 # =============================================================================
 # GPU: auto-detect and install drivers
 # =============================================================================
