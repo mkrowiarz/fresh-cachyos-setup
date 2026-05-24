@@ -33,7 +33,9 @@ function install_section_core {
     aur_install google-chrome
 
     # Nerd fonts
-    aur_install extra/ttf-firacode-nerd
+    # - FiraCode: desktop UI (waybar, rofi, wlogout, hyprlock, SDDM)
+    # - JetBrainsMono: Ghostty terminal
+    aur_install extra/ttf-firacode-nerd extra/ttf-jetbrains-mono-nerd
 
     # Tailscale VPN
     pacman_install tailscale
@@ -47,10 +49,13 @@ function install_section_core {
     # FZF - gigachad CTR-R search
     pacman_install fzf
 
+    # Ghostty terminal
+    pacman_install ghostty
+
     # Copy config files
     mkdir -p ~/.config && cp "$SCRIPT_DIR/.config/starship.toml" ~/.config/starship.toml
     cp -r "$SCRIPT_DIR/.config/fish" ~/.config
-    cp -r "$SCRIPT_DIR/.config/kitty" ~/.config
+    cp -r "$SCRIPT_DIR/.config/ghostty" ~/.config
 
     # Locale - install en_GB locale, just like en_US but weekdays start with Monday
     sudo localedef -i en_GB -f UTF-8 en_GB.UTF-8
@@ -159,19 +164,10 @@ function install_section_dev {
     pacman_install tealdeer
     tldr --update
 
-    # Visual Studio Code (official, not some OSS bullshit)
-    aur_install visual-studio-code-bin
-
     # Docker
     pacman_install docker docker-compose
     sudo systemctl enable docker
     sudo usermod -aG docker $USER
-
-    # Terraform 
-    pacman_install terraform
-
-    # AWS CLI
-    pacman_install aws-cli
 
     # Git settings
     local current_git_email=$(git config --global user.email 2>/dev/null)

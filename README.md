@@ -11,7 +11,7 @@ Download from [here](https://cachyos.org/download/) and install with following c
 
 - Bootloader: **Limine**
 - Desktop Environment: **Hyprland**
-- Terminal: **Kitty**
+- Terminal: **Ghostty**
 - Shell: **Fish**
 
 ## 🍝 Copypasta this
@@ -35,8 +35,8 @@ Following shit has been configured for you:
 
 - [x] `Full System update` : all newest packages
 - [x] `Chrome` : renders StackOverflow a bit nicer than curl
-- [x] `FiraCode Nerd Fonts` : icons for everything
-- [x] `Kitty` `Fish` `Starship` : terminal, shell and prompt with love
+- [x] `FiraCode Nerd Fonts` `JetBrainsMono Nerd Fonts` : icons for everything
+- [x] `Ghostty` `Fish` `Starship` : terminal, shell and prompt with love
 - [x] `fzf` : recursive search that works
 
 ### Hyprland
@@ -113,13 +113,12 @@ Please see `.config/starship.toml` file and [the official Website](https://stars
 Responsible for single and multi-monitor setups.  
 Please see `.config/kanshi/config` file and [the official Arch Wiki](https://wiki.archlinux.org/title/Kanshi).
 
-## Kitty
+## Ghostty
 Responsible for terminal emulation.  
 Please see:  
-- `.config/kitty/colors_gruvbox_dark` for color definitions
-- `.config/kitty/kitty.conf` for layout and other settings  
+- `.config/ghostty/config.ghostty` for theme, font, splits and keybindings  
 
-Also [the official Kitty Website](https://sw.kovidgoyal.net/kitty/).
+Also [the official Ghostty Website](https://ghostty.org/).
 
 ## Wlogout
 Power menu (logout, sleep, reboot, shutdown).  

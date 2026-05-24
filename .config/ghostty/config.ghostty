@@ -1,0 +1,47 @@
+### Visual configuration
+theme = light:Catppuccin Latte,dark:Catppuccin Frappe
+window-theme = system
+font-family = JetBrainsMono Nerd Font
+font-style = Bold
+font-size = 12
+background-opacity = 0.92
+background-blur-radius = 10
+unfocused-split-opacity = 0.6
+
+### Window
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = true
+window-padding-x = 24
+window-padding-y = 12,6
+quit-after-last-window-closed = true
+window-save-state = never
+window-new-tab-position = end
+
+### Input
+mouse-hide-while-typing = true
+focus-follows-mouse = true
+copy-on-select = clipboard
+
+### Shell
+shell-integration = fish
+shell-integration-features = no-cursor
+
+### Performance
+# scrollback-limit in bytes, roughly 125,000 lines
+scrollback-limit = 100000000
+
+### Keybindings
+# Navigate tabs
+keybind = super+alt+left=previous_tab
+keybind = super+alt+right=next_tab
+# Navigate splits
+keybind = super+left=goto_split:previous
+keybind = super+right=goto_split:next
+# Split panes (matching WezTerm: cmd+d vertical, cmd+shift+d horizontal)
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+keybind = super+shift+w=close_surface
+# cmd+s sends :w<enter> for vim
+keybind = super+s=text:\x1b:w\n
+# Shift+Enter for Claude Code
+keybind = shift+enter=text:\n
