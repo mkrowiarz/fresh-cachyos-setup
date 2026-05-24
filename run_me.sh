@@ -162,7 +162,7 @@ function install_section_hyprland {
 # =============================================================================
 
 function install_section_dev {
-    show_dialog_section_begin "Development" "Python, Terraform, Docker, Github CLI, AWS CLI"
+    show_dialog_section_begin "Development" "Python, Node (mise), Docker, Github CLI"
 
     pacman_install base-devel github-cli direnv
 
@@ -172,9 +172,20 @@ function install_section_dev {
     pacman_install just go-task
 
     # Python related
-    pacman_install tk python python-pip pyenv 
+    pacman_install tk python python-pip pyenv
     aur_install pyenv-virtualenv
-    
+
+    # mise - polyglot runtime/version manager (Node, etc.)
+    # Toolchains live under ~/.local/share/mise, keeping the host clean.
+    # Host nodejs-lts-jod stays (bitwarden-cli/semver need it); mise shims win in PATH.
+    pacman_install mise
+    mkdir -p ~/.config/fish
+    grep -qF 'mise activate fish' ~/.config/fish/config.fish 2>/dev/null \
+        || echo 'mise activate fish | source' >> ~/.config/fish/config.fish
+
+    # JetBrains Toolbox - manages JetBrains IDEs (PhpStorm, etc.)
+    aur_install jetbrains-toolbox
+
     # tldr command
     pacman_install tealdeer
     tldr --update
