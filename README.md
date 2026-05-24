@@ -39,6 +39,7 @@ Following shit has been configured for you:
 - [x] `Ghostty` `Fish` `Starship` : terminal, shell and prompt with love
 - [x] `fzf` : recursive search that works
 - [x] `chezmoi` : dotfile manager
+- [x] `Bitwarden` `1Password` : password managers (desktop + `bw`/`op` CLIs)
 
 ### Hyprland
 

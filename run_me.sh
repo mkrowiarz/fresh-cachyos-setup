@@ -55,6 +55,13 @@ function install_section_core {
     # Chezmoi - dotfile manager
     pacman_install chezmoi
 
+    # Password managers (desktop + CLI)
+    # - Bitwarden desktop (extra) + `bw` CLI (AUR)
+    # - 1Password desktop + `op` CLI (both AUR, proprietary)
+    pacman_install bitwarden
+    aur_install bitwarden-cli
+    aur_install 1password 1password-cli
+
     # Copy config files
     mkdir -p ~/.config && cp "$SCRIPT_DIR/.config/starship.toml" ~/.config/starship.toml
     cp -r "$SCRIPT_DIR/.config/fish" ~/.config
