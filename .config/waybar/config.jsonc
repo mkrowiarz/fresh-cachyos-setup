@@ -35,11 +35,11 @@
 		"on-scroll"     : 1,
 		"on-click-right": "mode",
 		"format": {
-			"months":     "<span color='#d79921'>{}</span>",
+			"months":     "<span color='#e5c890'>{}</span>",
 
-			"days":       "<span color='#ffead3'>{}</span>",
-			"weekdays":   "<span color='#689d6a'>{}</span>",
-			"today":      "<span color='#d65d0e'><b>{}</b></span>"
+			"days":       "<span color='#c6d0f5'>{}</span>",
+			"weekdays":   "<span color='#81c8be'>{}</span>",
+			"today":      "<span color='#ef9f76'><b>{}</b></span>"
 		}
 	},
 	"actions": {

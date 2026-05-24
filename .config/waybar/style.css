@@ -8,24 +8,24 @@
 
 window#waybar {
     background: rgba(0, 0, 0, 0);
-    color: #c8c8c8;
+    color: #c6d0f5;
 }
 
 .modules-left {
-	background-color: rgba(11, 14, 14, 0.35);
-    color: #c8c8c8; /* top right bottom left */
+	background-color: rgba(48, 52, 70, 0.35);
+    color: #c6d0f5; /* top right bottom left */
     margin: 5px 5px 5px 5px; /* top right bottom left */
 }
 
 .modules-center {
     background: transparent;
-    color: #c8c8c8;
+    color: #c6d0f5;
     margin: 5px 0px 5px 0px; /* top right bottom left */
 }
 
 .modules-right {
     background: transparent;
-    color: #c8c8c8;
+    color: #c6d0f5;
     margin: 5px 5px 5px 0px; /* top right bottom left */
 }
 
@@ -34,26 +34,26 @@ window#waybar {
 #workspaces button {
     padding: 4px 8px;
     margin: 0px 2px;
-    color: #C8C8C8;
+    color: #c6d0f5;
     box-shadow: none;
     background-image: none;
-	background-color: rgba(11, 14, 14, 0.35);
-    border: 2px solid rgba(85, 90, 97, 0);
+	background-color: rgba(48, 52, 70, 0.35);
+    border: 2px solid rgba(98, 104, 128, 0);
     border-radius: 5px;
 }
 
 #workspaces button:hover {
     color: #FFFFFF;
-    border: 2px solid rgba(85, 90, 97, 1);
+    border: 2px solid rgba(98, 104, 128, 1);
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: rgba(11, 14, 14, 0.8);
+    background-color: rgba(48, 52, 70, 0.8);
     color: #FFFFFF;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #e78284;
     color: #FFFFFF;
 }
 
@@ -69,18 +69,18 @@ window#waybar {
 #custom-power {
     padding: 4px 10px;
     margin: 0px 2px;
-	background-color: rgba(11, 14, 14, 0.35);
-    border: 2px solid rgba(85, 90, 97, 0);
+	background-color: rgba(48, 52, 70, 0.35);
+    border: 2px solid rgba(98, 104, 128, 0);
     border-radius: 5px;
 }
 
 #submap {    
     padding: 4px 10px;
     margin: 0px 2px;
-	background-color: rgba(11, 14, 14, 0.35);
-    border: 2px solid rgba(254, 128, 25, 1);
+	background-color: rgba(48, 52, 70, 0.35);
+    border: 2px solid rgba(239, 159, 118, 1);
     border-radius: 5px;
-    color: rgba(254, 128, 25, 1);
+    color: rgba(239, 159, 118, 1);
     font-weight: bold;
 }
 
@@ -92,5 +92,5 @@ window#waybar {
 #custom-media:hover,
 #custom-hyprshot:hover,
 #custom-power:hover {
-    border: 2px solid rgba(85, 90, 97, 1)
+    border: 2px solid rgba(98, 104, 128, 1)
 }
