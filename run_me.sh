@@ -166,6 +166,11 @@ function install_section_dev {
 
     pacman_install base-devel github-cli direnv
 
+    # Task runners
+    # - just: justfile command runner
+    # - go-task: Taskfile.dev runner (provides `task`)
+    pacman_install just go-task
+
     # Python related
     pacman_install tk python python-pip pyenv 
     aur_install pyenv-virtualenv

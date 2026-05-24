@@ -62,6 +62,7 @@ Following shit has been configured for you:
 - [x] `base-devel`: prerequired libraries, noone cares what's in it
 - [x] `github-cli` : create Pull Requests like 90s hackers
 - [x] `direnv` : automatic environments when you cd into a folder
+- [x] `just` `go-task` : task runners (justfile + Taskfile.dev)
 - [x] `tealdeer` : man pages for human beings
 - [x] `Visual Studio Code` : food ain't free
 - [x] `Docker` : containerized containers keep containerizing
