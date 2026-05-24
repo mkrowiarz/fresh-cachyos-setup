@@ -1,4 +1,4 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = """
 [](color_orange)\
@@ -9,45 +9,78 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
-$c\
-$rust\
-$golang\
 $nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
+${custom.php}\
 $python\
-[](fg:color_blue bg:color_bg3)\
-$docker_context\
-$conda\
-$aws\
-[](fg:color_bg3 bg:color_bg1)\
+[](fg:color_blue bg:color_green)\
 ${custom.tailscale}\
-[ ](fg:color_bg1)\
-$fill\
+[](fg:color_green bg:color_bg1)\
 $time\
-$line_break$character"""
+[ ](fg:color_bg1)\
+"""
 
-palette = 'gruvbox_dark'
+palette = "catppuccin_frappe"
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+[palettes.catppuccin_frappe]
+color_fg0 = "#303446"  # Base - dark text on bright segments
+color_text = "#c6d0f5"  # Text - light text on dark segments
+color_bg1 = "#292c3c"  # Mantle
+color_bg3 = "#414559"  # Surface0
+color_blue = "#8caaee"
+color_aqua = "#81c8be"  # Teal
+color_green = "#a6d189"
+color_orange = "#ef9f76"  # Peach
+color_purple = "#ca9ee6"  # Mauve
+color_red = "#e78284"
+color_yellow = "#e5c890"
+
+# To switch flavor, change the `palette = "..."` line above to one of:
+#   catppuccin_latte | catppuccin_frappe | catppuccin_macchiato | catppuccin_mocha
+
+[palettes.catppuccin_latte]
+color_fg0 = "#eff1f5"  # Base - light text on saturated segments
+color_text = "#4c4f69"  # Text - dark text on light surfaces
+color_bg1 = "#e6e9ef"  # Mantle
+color_bg3 = "#ccd0da"  # Surface0
+color_blue = "#1e66f5"
+color_aqua = "#179299"  # Teal
+color_green = "#40a02b"
+color_orange = "#fe640b"  # Peach
+color_purple = "#8839ef"  # Mauve
+color_red = "#d20f39"
+color_yellow = "#df8e1d"
+
+[palettes.catppuccin_macchiato]
+color_fg0 = "#24273a"  # Base - dark text on bright segments
+color_text = "#cad3f5"  # Text - light text on dark surfaces
+color_bg1 = "#1e2030"  # Mantle
+color_bg3 = "#363a4f"  # Surface0
+color_blue = "#8aadf4"
+color_aqua = "#8bd5ca"  # Teal
+color_green = "#a6da95"
+color_orange = "#f5a97f"  # Peach
+color_purple = "#c6a0f6"  # Mauve
+color_red = "#ed8796"
+color_yellow = "#eed49f"
+
+[palettes.catppuccin_mocha]
+color_fg0 = "#1e1e2e"  # Base - dark text on bright segments
+color_text = "#cdd6f4"  # Text - light text on dark surfaces
+color_bg1 = "#181825"  # Mantle
+color_bg3 = "#313244"  # Surface0
+color_blue = "#89b4fa"
+color_aqua = "#94e2d5"  # Teal
+color_green = "#a6e3a1"
+color_orange = "#fab387"  # Peach
+color_purple = "#cba6f7"  # Mauve
+color_red = "#f38ba8"
+color_yellow = "#f9e2af"
 
 [username]
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
+format = "[ $user ]($style)"
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
@@ -65,115 +98,41 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+format = "[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)"
+truncation_length = 20
+truncation_symbol = "…"
 
 [git_status]
 style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)"
 
 [nodejs]
 symbol = ""
 style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)"
 
-[c]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[golang]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
+[custom.php]
 symbol = ""
 style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+detect_files = [".php-version"]
+command = "head -1 .php-version | cut -d' ' -f1 | tr -d '^~>=<* '"
+format = "[[ $symbol( $output) ](fg:color_fg0 bg:color_blue)]($style)"
 
 [python]
 symbol = ""
 style = "bg:color_blue"
 pyenv_version_name = true
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)"
 
-[docker_context]
-symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
-
-[conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
-
-[aws]
-style = "bg:color_bg3"
-format = '[[( $symbol $profile )](fg:#83a598 bg:color_bg3)]($style)'
-symbol = ''
-
-[kubernetes]
-disabled = true
-detect_files = ['Chart.yaml', 'main.tf']
-detect_folders = ['terraform']
-style = "bg:color_bg3"
-format = '[[( $symbol $context ($namespace))](fg:color_fg0 bg:color_bg1)]($style)'
-symbol = '󰠳'
-
-[[kubernetes.contexts]]
-# Using capture groups
-# Contexts from GKE, AWS and other cloud providers usually carry additional information, like the region/zone.
-# The following entry matches on the GKE format (`gke_projectname_zone_cluster-name`)
-# and renames every matching kube context into a more readable format (`gke-cluster-name`):
-# context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
-context_pattern = "arn:.*/(?P<cluster>[\\w-]+)"
-context_alias = "$cluster"
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
-format = '[[ $time](fg:color_fg0)]($style)'
+format = "[[ 󰥔 $time ](fg:color_text bg:color_bg1)]($style)"
 
 [custom.tailscale]
-command = "tailscale status --json | jq -r '.CurrentTailnet.Name' | cut -d '.' -f1"
 when = "tailscale status --json | jq -r '.Self.Online' | grep -q true"
-style = "bg:color_bg3"
-format = '[[( $symbol $output)](fg:color_fg0 bg:color_bg1)]($style)'
+style = "bg:color_green"
+format = "[[ $symbol  ](fg:color_fg0 bg:color_green)]($style)"
 symbol = ""
-
-[fill]
-style = 'green'
-symbol = " "
-disabled = false
-
-[line_break]
-disabled = false
-
-[character]
-disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
