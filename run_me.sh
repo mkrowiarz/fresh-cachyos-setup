@@ -52,6 +52,9 @@ function install_section_core {
     # Ghostty terminal
     pacman_install ghostty
 
+    # Chezmoi - dotfile manager
+    pacman_install chezmoi
+
     # Copy config files
     mkdir -p ~/.config && cp "$SCRIPT_DIR/.config/starship.toml" ~/.config/starship.toml
     cp -r "$SCRIPT_DIR/.config/fish" ~/.config

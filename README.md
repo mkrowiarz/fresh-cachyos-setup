@@ -38,6 +38,7 @@ Following shit has been configured for you:
 - [x] `FiraCode Nerd Fonts` `JetBrainsMono Nerd Fonts` : icons for everything
 - [x] `Ghostty` `Fish` `Starship` : terminal, shell and prompt with love
 - [x] `fzf` : recursive search that works
+- [x] `chezmoi` : dotfile manager
 
 ### Hyprland
 
