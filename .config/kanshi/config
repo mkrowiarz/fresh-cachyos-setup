@@ -16,10 +16,13 @@ profile laptop-only {
 }
 
 profile single {
-    output DP-2 enable mode 2560x1440@165.08Hz position 0,0
+    # Right monitor only (left one is switched to the macOS input).
+    output "Dell Inc. DELL S2721DGF 477KT83" enable mode 2560x1440@165.08Hz position 0,0
 }
 
 profile dual {
-    output DP-2 enable mode 2560x1440@165.08Hz position 0,0
-    output DP-3 enable mode 2560x1440@165.08Hz position -2560,0
+    # Anchored by serial so the layout is stable regardless of which DP port is used.
+    # 9QJZP83 = physical LEFT (primary, at 0,0); 477KT83 = physical RIGHT
+    output "Dell Inc. DELL S2721DGF 9QJZP83" enable mode 2560x1440@165.08Hz position 0,0
+    output "Dell Inc. DELL S2721DGF 477KT83" enable mode 2560x1440@165.08Hz position 2560,0
 }
