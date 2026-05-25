@@ -49,6 +49,9 @@ function install_section_core {
     # FZF - gigachad CTR-R search
     pacman_install fzf
 
+    # Zoxide - smarter cd that learns your habits
+    pacman_install zoxide
+
     # Ghostty terminal
     pacman_install ghostty
 
