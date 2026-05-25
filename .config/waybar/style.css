@@ -66,6 +66,7 @@ window#waybar {
 #pulseaudio,
 #custom-media,
 #custom-hyprshot,
+#custom-ccmonitor,
 #custom-power {
     padding: 4px 10px;
     margin: 0px 2px;
@@ -73,6 +74,11 @@ window#waybar {
     border: 2px solid rgba(98, 104, 128, 0);
     border-radius: 5px;
 }
+
+#custom-ccmonitor.ok       { color: #a6d189; }            /* < 50%  */
+#custom-ccmonitor.warning  { color: #e5c890; }            /* 50-80% */
+#custom-ccmonitor.critical { color: #e78284; font-weight: bold; } /* >= 80% */
+#custom-ccmonitor.error    { color: #838ba7; }            /* token missing / API down */
 
 #submap {    
     padding: 4px 10px;
@@ -91,6 +97,7 @@ window#waybar {
 #pulseaudio:hover,
 #custom-media:hover,
 #custom-hyprshot:hover,
+#custom-ccmonitor:hover,
 #custom-power:hover {
     border: 2px solid rgba(98, 104, 128, 1)
 }

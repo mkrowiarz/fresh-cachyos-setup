@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     // "height": 46, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
@@ -13,6 +13,7 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/ccmonitor",
         "tray",
         "pulseaudio",
         "custom/hyprshot",
@@ -88,6 +89,13 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/ccmonitor": {
+        "exec": "ccmonitor -waybar",
+        "return-type": "json",
+        "interval": 60,
+        "tooltip": true,
+        "on-click": "~/.config/waybar/scripts/ccmonitor-toggle.sh"
     },
     "custom/hyprshot": {
         "exec": "echo '󰄄'",
